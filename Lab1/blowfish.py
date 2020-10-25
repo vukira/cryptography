@@ -201,8 +201,8 @@ class blowfish():
             a = 4 - length_key % 4
             str_key = '0' * a + str_key
         count_key = 576 // length_key
-        mod_key = (576 % length_key)  # биты переводим в 16-ый разряд, для того чтобы узнать кол-во символов от ключа в хвосте
-        str_new_key = '0b' + '1' + str_key * count_key + str_key[:mod_key] # в стр_кей 1 цифра всегда единичка, не забыть!
+        mod_key = (576 % length_key)  
+        str_new_key = '0b' + '1' + str_key * count_key + str_key[:mod_key] 
         self.new_key = int(str_new_key, 2) 
 
     def P_Box_update(self):
