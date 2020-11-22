@@ -5,9 +5,7 @@ from flask_login import LoginManager
 from flask_mail import Mail, Message
 import os
 
-# init SQLAlchemy so we can use it later in our models
 db = SQLAlchemy()
-
 
 app = Flask(__name__)
 
@@ -36,10 +34,5 @@ def load_user(user_id):
 
 bootstrap = Bootstrap(app)
 
-# blueprint for non-auth parts of app
 from .main import main as main_blueprint
 app.register_blueprint(main_blueprint)
-
-
-
-
